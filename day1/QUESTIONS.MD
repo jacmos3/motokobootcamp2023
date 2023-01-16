@@ -2,15 +2,19 @@ Q: How much is the current memory capacity of a canister?
 A: The current max size is 4GB
 
 Q:What is the issue with the following code sample?
+```motoko
     actor {
         let counter : Nat = 0;
         public func increment_counter() : async () {
         counter := counter + 1;
         };
     }
+```
 A: The issue is in the "let" keyword, since counter is supposed to be a variable and not immutable. "let" should be replaced with "var"
 
+
 Q: What is the issue with the following code sample?
+```motoko
     actor {
         var message : Text = 0;
 
@@ -23,6 +27,7 @@ Q: What is the issue with the following code sample?
             return(message);
         };
     }
+```
 
 A: The issues here are two: 
     1) The first assignement to the "message" variable is wrong: Motoko is a strongly typed language, so it cannot be possible to assign a number to a Text variable. 0 should be replaced with "0".
