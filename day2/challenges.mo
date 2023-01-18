@@ -61,10 +61,10 @@ actor {
   };
 
   //Write a function find_duplicates that takes an array of natural numbers and returns a new array containing all duplicate numbers. The order of the elements in the returned array should be the same as the order of the first occurrence in the input array.
-  public func find_duplicates(a : [Nat]) : async [Int]{
+  public func find_duplicates(a : [Nat]) : async [?Nat]{
     var counter : Nat = 0;
     let myMap = Map.HashMap<Nat,Bool>(0,Nat.equal,Hash.hash);
-    var output : [var Int] = Array.init<Int>(a.size(), -1);
+    var output : [var ?Nat] = Array.init<?Nat>(a.size(), null);
     for (number in Array.vals(a)) {
       if (myMap.get(number) == null){
         myMap.put(number,true);
@@ -72,11 +72,11 @@ actor {
       else
       if (myMap.get(number) == ?true){
         myMap.put(number,false);
-        output[counter] := number;
+        output[counter] := ?number;
         counter += 1;
       }
     };
-    let isValid = func (x : Int) : Bool { x > -1 };
+    let isValid = func (x : ?Nat) : Bool { x != null };
     return Array.filter(Array.freeze(output), isValid);
   };
 
