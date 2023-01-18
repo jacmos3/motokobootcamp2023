@@ -1,4 +1,3 @@
-//In `main.mo` import the type **List** from the Base Library and create a list that stores book.
 import List "mo:base/List";
 import Book "book";
 import Utils "utils";
@@ -18,11 +17,6 @@ actor {
 
     //this is a test function 
     public func test_drop_func(array:[Nat], n : Nat) : async [Nat]{
-        let arr : [Nat] = Utils.drop<Nat>(array, n);
-        let i = Iter.fromArray(arr);
-        for (number in i){
-           Debug.print(debug_show(number));
-          };
-        return arr;
+        Utils.drop<Nat>(array, n);
     };
 }
