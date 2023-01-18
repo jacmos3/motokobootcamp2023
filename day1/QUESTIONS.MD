@@ -1,6 +1,6 @@
 **Q**: How much is the current memory capacity of a canister?
 
-**A**: The current max size is 4GB
+**A**: The current max size is 4GB but one canister can store up to 48GB of data (and this is a temporary limitation).
 
 **Q**:What is the issue with the following code sample?
 ```motoko
