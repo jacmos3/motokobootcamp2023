@@ -5,12 +5,20 @@ module {
         pages: Nat;
     };
 
-    // In your file called book.mo create a function called create_book that takes two parameters : a title of type Text, and number of pages of type Nat and returns a book. This function will create a new book based on the parameters passed and then read it before returning it.
+    // In your file called book.mo create a function called create_book that takes two parameters : a title of type Text, and number of pages of type Nat and returns a book. 
     public func create_book(title: Text, pages: Nat) : Book {
-    return {
-        title = title; 
-        pages = pages 
-    };
+
+      //This function will create a new book based on the parameters passed
+      let newBook: Book = {
+        title = title;
+        pages = pages;
+      };
+
+      //and then read it before returning it.
+      let t : Text = newBook.title;
+      let p : Nat = newBook.pages;
+
+    return newBook;
   }
 }
 
