@@ -50,7 +50,7 @@ actor {
 **A**: the error is that "Nat" module has not been imported, and plus "n" and "t" are unused and could be removed.
 
 **Q**: What is wrong with the following code?
-```
+```motoko
 actor {
   var languages : [var Text] = ["English", "German", "Chinese", "Japanese", "French"];
 
@@ -63,7 +63,7 @@ actor {
 **A**: should remove the "var" keyword in [var Text] both on variable declaration and function output. Plus func input is unused and could be removed
 
 **Q**: What is wrong with the following code?
-```
+```motoko
 actor {
   var languages : [Text] = ["English", "German", "Chinese", "Japanese", "French"];
 
@@ -76,7 +76,7 @@ actor {
 ```
 
 **A**: it should be imported the Array module. Then the Array.append is deprecated, it should be used a Buffer. Plus "languages" and return is a waste of code. Full code:
-```
+```motoko
 actor {
   var languages : [Text] = ["English", "German", "Chinese", "Japanese", "French"];
 
