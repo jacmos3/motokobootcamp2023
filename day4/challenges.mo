@@ -13,12 +13,12 @@ actor {
 
     // Write a function reverse that takes l of type List and returns the reversed list.
     func reverse<T> (l : List<T>) : List<T>{
-      return List.reverse(l); //hope it is not considering cheating
+        return List.reverse(l); //hope it is not considering cheating
     };
 
     // Write a function is_anonymous that takes no arguments but returns a Boolean indicating if the caller is anonymous or not.
-    public shared ( {caller} ) func is_anynomous() : async Bool {
-      Principal.isAnonymous(caller);
+    public shared ({caller}) func is_anynomous() : async Bool {
+        Principal.isAnonymous(caller);
     };
 
     // Write a function find_in_buffer that takes two arguments, buf of type Buffer and val of type T, and returns the optional index of the first occurrence of "val" in "buf".
@@ -31,7 +31,7 @@ actor {
     let usernames = HashMap.HashMap<Principal, Text>(0, Principal.equal, Principal.hash);
 
     public shared ({ caller }) func add_username(name : Text) : async () {
-      usernames.put(caller, name);
+        usernames.put(caller, name);
     };
 
     public func get_usernames() : async [(Principal, Text)]{
