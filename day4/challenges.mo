@@ -8,12 +8,12 @@ actor {
   type List<T> = List.List<T>;
     // Write a function unique that takes a list l of type List and returns a new list with all duplicate elements removed.
     func unique<T>(l : List<T>, equal: (T,T) -> Bool) : List<T> {
-      return l;
+      l;
     };
 
     // Write a function reverse that takes l of type List and returns the reversed list.
     func reverse<T> (l : List<T>) : List<T>{
-        return List.reverse(l); //hope it is not considering cheating
+        List.reverse(l); //hope it is not considering cheating
     };
 
     // Write a function is_anonymous that takes no arguments but returns a Boolean indicating if the caller is anonymous or not.
